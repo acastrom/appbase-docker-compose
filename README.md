@@ -33,4 +33,6 @@ sudo docker exec -i appbase-postgres psql appbase < ./fql_ddl.sql fql
 
 You can access the web console locally on: http://localhost:18080/appbase-webconsole/
 
+The data on the postgres db will be preserved under the `.postgres` folder, even after restarting the container.
+
 Happy development!!!
