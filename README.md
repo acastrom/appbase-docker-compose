@@ -25,7 +25,7 @@ appbase-postgres   /docker-entrypoint.sh postgres   Up      0.0.0.0:15432->5432/
 appbase-tomcat     catalina.sh run                  Up      0.0.0.0:18080->8080/tcp,:::18080->8080/tcp
 ```
 
-Init the FQL metadata tables (ony on the first run)
+Init the FQL metadata tables **(ony on the first run)**
 
 ```
 sudo docker exec -i appbase-postgres psql appbase < ./fql_ddl.sql fql
@@ -34,5 +34,11 @@ sudo docker exec -i appbase-postgres psql appbase < ./fql_ddl.sql fql
 You can access the web console locally on: http://localhost:18080/appbase-webconsole/
 
 The data on the postgres db will be preserved under the `.postgres` folder, even after restarting the container.
+
+To stop the containers
+
+```
+sudo docker-compose down
+```
 
 Happy development!!!
